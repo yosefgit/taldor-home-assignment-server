@@ -5,7 +5,7 @@ router.post('/', function(req, res, next){
     const { username, password } = req.body;
     const { ADMIN_USER, ADMIN_PASSWORD, SECRET } = process.env;
 
-    if(username !== ADMIN_USER && password !== ADMIN_PASSWORD){
+    if(username !== ADMIN_USER || password !== ADMIN_PASSWORD){
         res.status(401).send('אינך מורשה להיכנס למערכת');
     }
 
