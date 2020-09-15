@@ -52,7 +52,7 @@ router.delete('/movie/:id', function(req, res, next){
     const id = parseInt(req.params.id);
     movieService.deleteMovie(id);
 
-    res.sendStatus(200);
+    res.json(id);
 })
 
 router.get('/categories', function(req, res, next){
